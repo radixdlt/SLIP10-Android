@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.radixdlt.bip44.BIP44Test" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-10-28T10:46:26" hostname="Alexandrus-MacBook-Pro-2.local" time="0.009">
+  <properties/>
+  <testcase name="parsingFailsForEmptyInput()" classname="com.radixdlt.bip44.BIP44Test" time="0.001"/>
+  <testcase name="toStringFromIntoWorks()" classname="com.radixdlt.bip44.BIP44Test" time="0.005"/>
+  <testcase name="fromPathWork()" classname="com.radixdlt.bip44.BIP44Test" time="0.001"/>
+  <testcase name="parsingFailsForBadInput()" classname="com.radixdlt.bip44.BIP44Test" time="0.0"/>
+  <testcase name="parsingFailsForMissingNumber()" classname="com.radixdlt.bip44.BIP44Test" time="0.0"/>
+  <testcase name="incrementWorks()" classname="com.radixdlt.bip44.BIP44Test" time="0.0"/>
+  <testcase name="toStringWorks()" classname="com.radixdlt.bip44.BIP44Test" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

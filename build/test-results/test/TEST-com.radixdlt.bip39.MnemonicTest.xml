@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.radixdlt.bip39.MnemonicTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-10-28T10:46:26" hostname="Alexandrus-MacBook-Pro-2.local" time="0.379">
+  <properties/>
+  <testcase name="throwsOnWrongEntropySize()" classname="com.radixdlt.bip39.MnemonicTest" time="0.015"/>
+  <testcase name="throwsOnEmptyString()" classname="com.radixdlt.bip39.MnemonicTest" time="0.004"/>
+  <testcase name="mnemonicToEntropy()" classname="com.radixdlt.bip39.MnemonicTest" time="0.026"/>
+  <testcase name="throwsOnWrongNumberOfWords()" classname="com.radixdlt.bip39.MnemonicTest" time="0.0"/>
+  <testcase name="mnemonicToMasterKey()" classname="com.radixdlt.bip39.MnemonicTest" time="0.214"/>
+  <testcase name="throwsOnWrongChecksum()" classname="com.radixdlt.bip39.MnemonicTest" time="0.0"/>
+  <testcase name="entropyToMnemonic()" classname="com.radixdlt.bip39.MnemonicTest" time="0.001"/>
+  <testcase name="mnemonicToSeed()" classname="com.radixdlt.bip39.MnemonicTest" time="0.051"/>
+  <testcase name="mnemonicVerify()" classname="com.radixdlt.bip39.MnemonicTest" time="0.0"/>
+  <testcase name="generatesValidPhrases()" classname="com.radixdlt.bip39.MnemonicTest" time="0.064"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
