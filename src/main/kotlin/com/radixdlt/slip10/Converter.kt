@@ -13,7 +13,7 @@ import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.security.KeyException
 
-fun Seed.toNoPrefixHexString(): String {
+fun Seed.toHexString(): String {
     return seed.toHexString()
 }
 

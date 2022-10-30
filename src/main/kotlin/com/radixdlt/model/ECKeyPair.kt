@@ -3,6 +3,8 @@ package com.radixdlt.model
 import com.radixdlt.crypto.ec.EllipticCurveType
 import com.radixdlt.extensions.hexToBigInteger
 import com.radixdlt.extensions.toBigInteger
+import com.radixdlt.extensions.toBytesPadded
+import com.radixdlt.hex.extensions.toHexString
 import com.radixdlt.hex.model.HexString
 import com.radixdlt.slip10.model.ExtendedKey
 import java.math.BigInteger
@@ -23,6 +25,10 @@ class PrivateKey(val key: BigInteger, val curveType: EllipticCurveType) {
         if (curveType != other.curveType) return false
 
         return true
+    }
+
+    fun toHexString(): String {
+        return key.toBytesPadded(PRIVATE_KEY_SIZE).toHexString()
     }
 }
 

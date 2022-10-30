@@ -76,7 +76,7 @@ fun MnemonicWords.mnemonicToEntropy(wordList: List<String>): ByteArray {
 }
 
 fun MnemonicWords.toKey(path: String, passphrase: String = "", curveType: EllipticCurveType = EllipticCurveType.Secp256k1) =
-        toSeed(passphrase).toKey(path)
+        toSeed(passphrase).toKey(path, curveType)
 
 /**
  * Converts an entropy buffer to a list of words according to the BIP39 spec

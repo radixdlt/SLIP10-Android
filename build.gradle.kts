@@ -19,9 +19,10 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
 
-    implementation("org.bouncycastle:bcprov-jdk15to18:1.70")
+    implementation("org.bouncycastle:bcprov-jdk15to18:1.72")
 
     testImplementation("org.assertj:assertj-core:3.23.1")
+    testImplementation("com.google.code.gson:gson:2.10")
 }
 
 tasks.test {
