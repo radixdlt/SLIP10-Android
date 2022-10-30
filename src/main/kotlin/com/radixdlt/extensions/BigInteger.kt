@@ -19,29 +19,7 @@ fun BigInteger.toBytesPadded(length: Int): ByteArray {
     return bytes.copyInto(result, destinationOffset = destOffset, startIndex = offset)
 }
 
-fun BigInteger.toHexStringNoPrefix(): String = toString(16)
-fun BigInteger.toHexString(): String = "0x" + toString(16)
-
-fun BigInteger.toHexStringZeroPadded(size: Int, withPrefix: Boolean = true): String {
-    var result = toHexStringNoPrefix()
-
-    val length = result.length
-    if (length > size) {
-        throw UnsupportedOperationException("Value $result is larger then length $size")
-    } else if (signum() < 0) {
-        throw UnsupportedOperationException("Value cannot be negative")
-    }
-
-    if (length < size) {
-        result = "0".repeat(size - length) + result
-    }
-
-    return if (withPrefix) {
-        "0x$result"
-    } else {
-        result
-    }
-}
+fun BigInteger.toHexString(): String = toString(16)
 
 fun HexString.hexToBigInteger() = BigInteger(clean0xPrefix().string, 16)
 

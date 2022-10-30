@@ -6,7 +6,7 @@ import com.radixdlt.crypto.toECKeyPair
 import com.radixdlt.crypto.base58.decodeBase58WithChecksum
 import com.radixdlt.crypto.ec.EllipticCurveType
 import com.radixdlt.crypto.ec.toEllipticCurve
-import com.radixdlt.hex.extensions.toNoPrefixHexString
+import com.radixdlt.hex.extensions.toHexString
 import com.radixdlt.model.*
 import java.math.BigInteger
 import java.nio.ByteBuffer
@@ -14,7 +14,7 @@ import java.nio.ByteOrder
 import java.security.KeyException
 
 fun Seed.toNoPrefixHexString(): String {
-    return seed.toNoPrefixHexString()
+    return seed.toHexString()
 }
 
 fun Seed.toExtendedKey(publicKeyOnly: Boolean = false, curveType: EllipticCurveType = EllipticCurveType.Secp256k1, testnet: Boolean = false): ExtendedKey {

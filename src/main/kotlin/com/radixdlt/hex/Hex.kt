@@ -14,13 +14,11 @@ fun encode(value: Byte): String {
 }
 
 /**
- * Encodes the given byte array value to its hexadecimal representations, and prepends the given prefix to it.
+ * Encodes the given byte array value to its hexadecimal representations.
  *
- * Note that by default the 0x prefix is prepended to the result of the conversion.
- * If you want to have the representation without the 0x prefix, pass to this method an empty prefix.
  */
-fun encode(value: ByteArray, prefix: String = "0x"): String {
-    return prefix + value.joinToString("") { encode(it) }
+fun encode(value: ByteArray): String {
+    return value.joinToString("") { encode(it) }
 }
 
 /**
