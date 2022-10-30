@@ -68,11 +68,6 @@ class TestVector {
         assertThat(testKey.privateKey).isEqualTo(derivedKey.keyPair.privateKey.toHexString())
         assertThat(testKey.chainCode).isEqualTo(derivedKey.chainCode.toHexString())
 
-        // TODO: Remove this after Ed25519 PrivateKey to PublicKey fix
-        if (curveType == EllipticCurveType.Ed25519) {
-            return
-        }
-
         assertThat(testKey.publicKey).isEqualTo(derivedKey.keyPair.getCompressedPublicKey().toHexString())
 
         assertThat(testKey.fingerprint).isEqualTo(derivedKey.parentFingerprint.toBytes().toByteArray().toHexString())

@@ -6,7 +6,6 @@ import com.radixdlt.extensions.toBigInteger
 import com.radixdlt.extensions.toBytesPadded
 import com.radixdlt.hex.extensions.toHexString
 import com.radixdlt.hex.model.HexString
-import com.radixdlt.slip10.model.ExtendedKey
 import java.math.BigInteger
 
 class PrivateKey(val key: BigInteger, val curveType: EllipticCurveType) {
