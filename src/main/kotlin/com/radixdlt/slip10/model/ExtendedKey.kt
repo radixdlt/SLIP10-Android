@@ -71,4 +71,11 @@ data class ExtendedKey(val keyPair: ECKeyPair,
         return out.array().encodeToBase58WithChecksum()
     }
 
+    fun xprv(): String {
+        return serialize()
+    }
+
+    fun xpub(): String {
+        return serialize(true)
+    }
 }

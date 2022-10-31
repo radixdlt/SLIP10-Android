@@ -72,8 +72,8 @@ class TestVector {
 
         assertThat(testKey.fingerprint).isEqualTo(derivedKey.parentFingerprint.toBytes().toByteArray().toHexString())
 
-        assertThat(testKey.xprv).isEqualTo(derivedKey.serialize())
-        assertThat(testKey.xpub).isEqualTo(derivedKey.serialize(true))
+        assertThat(testKey.xprv).isEqualTo(derivedKey.xprv())
+        assertThat(testKey.xpub).isEqualTo(derivedKey.xpub())
     }
 
     private fun testCaseCurveToEllipticCurveType(curveName: String): EllipticCurveType {

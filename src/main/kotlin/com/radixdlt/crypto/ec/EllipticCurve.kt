@@ -38,8 +38,12 @@ class EllipticCurve(val type: EllipticCurveType) {
     /**
      * Takes a public key in compressed encoding (including prefix)
      * and returns the key in uncompressed encoding (without prefix)
+     * For Ed25519 does nothing, as there is only compressed key
      */
     fun decompressKey(publicBytes: ByteArray): ByteArray {
+        if (type == EllipticCurveType.Ed25519) {
+            return publicBytes
+        }
         val point = decodePoint(publicBytes)
         val encoded = point.encoded()
         return encoded.copyOfRange(1, encoded.size)
