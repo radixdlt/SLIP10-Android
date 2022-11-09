@@ -19,8 +19,6 @@ import com.radixdlt.derivation.model.NetworkId
  * Where `'` denotes hardened path, which is **required** as per [SLIP-10][slip10].
  * where `525` is ASCII sum of `"ACCOUNT"`, i.e. `"ACCOUNT".map{ $0.asciiValue! }.reduce(0, +)`
  *
- * [cap26]: https://radixdlt.atlassian.net/l/cp/UNaBAGUC
- * [slip10]: https://github.com/satoshilabs/slips/blob/master/slip-0010.md
  */
 data class AccountHDDerivationPath(
     private val networkId: NetworkId,

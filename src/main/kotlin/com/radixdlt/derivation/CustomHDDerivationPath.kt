@@ -9,8 +9,6 @@ import com.radixdlt.derivation.model.CoinType
  * The format is:
  *          `m/44'/1022'`
  * Where `'` denotes hardened path, which is **required** as per [SLIP-10][slip10].
- * [cap26]: https://radixdlt.atlassian.net/l/cp/UNaBAGUC
- * [slip10]: https://github.com/satoshilabs/slips/blob/master/slip-0010.md
  */
 data class CustomHDDerivationPath(
     val bip44: BIP44
