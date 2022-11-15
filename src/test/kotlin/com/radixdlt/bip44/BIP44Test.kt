@@ -99,7 +99,7 @@ class BIP44Test {
                 )
             )
         )
-        assertEquals(bip44.customDerivationPath(), "/10'/20'/30'")
+        assertEquals(bip44.toString(), "m/10'/20'/30'")
     }
 
     @Test
@@ -120,6 +120,6 @@ class BIP44Test {
                 )
             )
         )
-        assertEquals(bip44.customDerivationPath(), "/10/20/30")
+        assertEquals(bip44.toString(), "m/10/20/30")
     }
 }

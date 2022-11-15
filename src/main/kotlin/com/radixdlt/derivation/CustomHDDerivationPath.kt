@@ -17,6 +17,6 @@ data class CustomHDDerivationPath(
     private val coinType: CoinType = CoinType.RadixDlt
 
     val path: String
-        get() = "$BIP44_PREFIX/44'/${coinType.value}'${bip44.customDerivationPath()}"
+        get() = "$BIP44_PREFIX/44'/${coinType.value}'${bip44}"
 
 }

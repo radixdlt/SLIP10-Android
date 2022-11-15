@@ -16,7 +16,6 @@ private fun getEnsuredCleanPath(path: String): String {
 
 data class BIP44Element(val hardened: Boolean, val number: Int) {
     val numberWithHardeningFlag = if (hardened) number or BIP44_HARDENING_FLAG else number
-    val numberFormatted: String = if (hardened) "$number'" else number.toString()
 }
 
 data class BIP44(val path: List<BIP44Element>) {
@@ -46,13 +45,4 @@ data class BIP44(val path: List<BIP44Element>) {
     fun increment() = BIP44(path.subList(0, path.size - 1) +
             path.last().let { BIP44Element(it.hardened, it.number + 1) })
 
-    fun customDerivationPath(): String {
-        if (path.isEmpty()) return ""
-        return path.joinToString(
-            prefix = "/",
-            separator = "/"
-        ) { bip44Element ->
-            bip44Element.numberFormatted
-        }
-    }
 }
