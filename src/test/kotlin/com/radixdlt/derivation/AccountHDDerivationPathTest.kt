@@ -21,33 +21,33 @@ class AccountHDDerivationPathTest {
     @Test
     fun `verify account derivation path for betanet at index 0 for signing authentication`() {
         val accountHDDerivationPath = AccountHDDerivationPath(
-            networkId = NetworkId.Betanet,
+            networkId = NetworkId.Adapanet,
             accountIndex = 0,
             keyType = KeyType.SignAuth
         )
 
-        assertEquals(accountHDDerivationPath.path, "m/44'/1022'/11'/525'/0'/706'")
+        assertEquals(accountHDDerivationPath.path, "m/44'/1022'/10'/525'/0'/706'")
     }
 
     @Test
     fun `verify account derivation path for betanet at index 1 for signing authentication`() {
         val accountHDDerivationPath = AccountHDDerivationPath(
-            networkId = NetworkId.Betanet,
+            networkId = NetworkId.Adapanet,
             accountIndex = 1,
             keyType = KeyType.SignAuth
         )
 
-        assertEquals(accountHDDerivationPath.path, "m/44'/1022'/11'/525'/1'/706'")
+        assertEquals(accountHDDerivationPath.path, "m/44'/1022'/10'/525'/1'/706'")
     }
 
     @Test
     fun `verify account derivation path for betanet at index 1 for signing transaction`() {
         val accountHDDerivationPath = AccountHDDerivationPath(
-            networkId = NetworkId.Betanet,
+            networkId = NetworkId.Adapanet,
             accountIndex = 1,
             keyType = KeyType.SignTransaction
         )
 
-        assertEquals(accountHDDerivationPath.path, "m/44'/1022'/11'/525'/1'/1238'")
+        assertEquals(accountHDDerivationPath.path, "m/44'/1022'/10'/525'/1'/1238'")
     }
 }

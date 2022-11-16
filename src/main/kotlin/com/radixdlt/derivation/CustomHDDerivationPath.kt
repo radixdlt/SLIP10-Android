@@ -13,10 +13,15 @@ import com.radixdlt.derivation.model.CoinType
 data class CustomHDDerivationPath(
     val bip44: BIP44
 ) {
-
     private val coinType: CoinType = CoinType.RadixDlt
 
+    /**
+     * Check if path starts with m/44'/1022' (hardened or not). Otherwise throw exception
+     */
     val path: String
-        get() = "$BIP44_PREFIX/44'/${coinType.value}'${bip44}"
+        get() = if (
+            bip44.toString().startsWith("$BIP44_PREFIX/44'/${coinType.value}") ||
+            bip44.toString().startsWith("$BIP44_PREFIX/44/${coinType.value}")
+        ) bip44.toString() else throw IllegalArgumentException("Invalid derivation path")
 
 }

@@ -21,7 +21,7 @@ class IdentityHDDerivationPathTest {
     @Test
     fun `verify identity derivation path for alphanet at index 0 for signing authentication`() {
         val identityHDDerivationPath = IdentityHDDerivationPath(
-            networkId = NetworkId.Alphanet,
+            networkId = NetworkId.Adapanet,
             identityIndex = 0,
             keyType = KeyType.SignAuth
         )

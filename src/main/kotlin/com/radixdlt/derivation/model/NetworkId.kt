@@ -6,7 +6,6 @@ package com.radixdlt.derivation.model
  */
 enum class NetworkId(val value: Int) {
     Mainnet(1),
-    Stokenet(2),
-    Alphanet(10),
-    Betanet(11),
+    Adapanet(10),
+    Enkinet(33)
 }
