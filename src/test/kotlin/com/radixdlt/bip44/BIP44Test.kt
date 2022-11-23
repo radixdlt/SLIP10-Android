@@ -3,6 +3,7 @@ package com.radixdlt.bip44
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
+import kotlin.test.assertEquals
 
 class BIP44Test {
 
@@ -78,5 +79,47 @@ class BIP44Test {
     fun incrementWorks() {
         assertThat(BIP44("m/0/1/2").increment())
                 .isEqualTo(BIP44("m/0/1/3"))
+    }
+
+    @Test
+    fun verifyHardenedDerivationPath() {
+        val bip44 = BIP44(
+            path = listOf(
+                BIP44Element(
+                    hardened = true,
+                    number = 10
+                ),
+                BIP44Element(
+                    hardened = true,
+                    number = 20
+                ),
+                BIP44Element(
+                    hardened = true,
+                    number = 30
+                )
+            )
+        )
+        assertEquals(bip44.toString(), "m/10'/20'/30'")
+    }
+
+    @Test
+    fun verifyUnhardenedDerivationPath() {
+        val bip44 = BIP44(
+            path = listOf(
+                BIP44Element(
+                    hardened = false,
+                    number = 10
+                ),
+                BIP44Element(
+                    hardened = false,
+                    number = 20
+                ),
+                BIP44Element(
+                    hardened = false,
+                    number = 30
+                )
+            )
+        )
+        assertEquals(bip44.toString(), "m/10/20/30")
     }
 }

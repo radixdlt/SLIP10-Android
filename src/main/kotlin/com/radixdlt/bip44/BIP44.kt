@@ -44,4 +44,5 @@ data class BIP44(val path: List<BIP44Element>) {
 
     fun increment() = BIP44(path.subList(0, path.size - 1) +
             path.last().let { BIP44Element(it.hardened, it.number + 1) })
+
 }
