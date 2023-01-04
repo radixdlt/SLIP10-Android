@@ -37,7 +37,7 @@ class PrivateKey(val key: BigInteger, val curveType: EllipticCurveType) {
     }
 
     fun toHexString(): String {
-        return key.toBytesPadded(PRIVATE_KEY_SIZE).toHexString()
+        return keyByteArray().toHexString()
     }
 
     override fun hashCode(): Int {
