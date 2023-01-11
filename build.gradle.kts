@@ -37,6 +37,21 @@ application {
 }
 
 publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            groupId = project.group.toString()
+            artifactId = rootProject.name
+            version = project.version.toString()
+
+            from(components["java"])
+
+            pom {
+                name.set("slip10-android")
+                description.set("Implementation of SLIP-10")
+                url.set("https://github.com/radixdlt/SLIP10-Android")
+            }
+        }
+    }
     repositories {
         maven {
             name = "GitHubPackages"
