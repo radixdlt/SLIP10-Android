@@ -4,13 +4,12 @@ plugins {
     kotlin("jvm") version "1.7.20"
     kotlin("plugin.serialization") version "1.7.20"
 
+    `maven-publish`
     application
 }
 
 group = "com.radixdlt"
 version = "1.0-SNAPSHOT"
-
-
 
 repositories {
     mavenCentral()
@@ -35,4 +34,17 @@ tasks.withType<KotlinCompile> {
 
 application {
     mainClass.set("MainKt")
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/radixdlt/maven-pkg"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
