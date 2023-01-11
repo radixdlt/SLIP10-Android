@@ -42,14 +42,7 @@ publishing {
             groupId = project.group.toString()
             artifactId = "slip10-android"
             version = project.version.toString()
-
             from(components["java"])
-
-            pom {
-                name.set("slip10-android")
-                description.set("Implementation of SLIP-10")
-                url.set("https://github.com/radixdlt/SLIP10-Android")
-            }
         }
     }
     repositories {
