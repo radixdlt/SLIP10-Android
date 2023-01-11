@@ -4,13 +4,12 @@ plugins {
     kotlin("jvm") version "1.7.20"
     kotlin("plugin.serialization") version "1.7.20"
 
+    `maven-publish`
     application
 }
 
 group = "com.radixdlt"
-version = "1.0-SNAPSHOT"
-
-
+version = "1.0-snapshot"
 
 repositories {
     mavenCentral()
@@ -35,4 +34,25 @@ tasks.withType<KotlinCompile> {
 
 application {
     mainClass.set("MainKt")
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            groupId = project.group.toString()
+            artifactId = "slip10-android"
+            version = project.version.toString()
+            from(components["java"])
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/radixdlt/slip10-android")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
 }
