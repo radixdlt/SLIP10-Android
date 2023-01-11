@@ -40,7 +40,7 @@ publishing {
     publications {
         create<MavenPublication>("mavenJava") {
             groupId = project.group.toString()
-            artifactId = rootProject.name
+            artifactId = "slip10-android"
             version = project.version.toString()
 
             from(components["java"])
