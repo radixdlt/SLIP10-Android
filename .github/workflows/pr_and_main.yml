@@ -1,0 +1,33 @@
+name: "Snyk scan"
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  snyk_scan_deps_licences:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
+      - name: Run Snyk to check for deps vulnerabilities
+        uses: snyk/actions/gradle-jdk17@b98d498629f1c368650224d6d212bf7dfa89e4bf # v0.4.0
+        with:
+          args: --all-projects --org=${{ secrets.SNYK_ORG_ID }} --severity-threshold=high
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+  snyk_scan_code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
+
+      - name: Run Snyk to check for code vulnerabilities
+        uses: snyk/actions/gradle-jdk17@b98d498629f1c368650224d6d212bf7dfa89e4bf # v0.4.0
+        with:
+          args: --all-projects --org=${{ secrets.SNYK_ORG_ID }} --severity-threshold=high
+          command: code test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
