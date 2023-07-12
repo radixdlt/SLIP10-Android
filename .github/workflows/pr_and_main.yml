@@ -33,6 +33,9 @@ jobs:
 
   snyk_sbom:
     runs-on: ubuntu-latest
+    needs:
+      - snyk_scan_deps_licences
+      - snyk_scan_code
     steps:
       - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
       - name: Generate SBOM # check SBOM can be generated but nothing is done with it
