@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.radixdlt"
-version = "1.0-snapshot"
+version = "1.2-snapshot"
 
 repositories {
     mavenCentral()

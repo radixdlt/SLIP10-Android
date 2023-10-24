@@ -3,7 +3,7 @@ package com.radixdlt.crypto.ec
 import org.bouncycastle.math.ec.ECPoint
 import org.bouncycastle.math.ec.FixedPointCombMultiplier
 import java.math.BigInteger
-import java.util.*
+import java.util.Arrays
 
 
 fun EllipticCurve.publicFromPrivate(privateKey: BigInteger): BigInteger {
