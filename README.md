@@ -67,3 +67,7 @@ val xprv =
 // get the [`ExtendedKey`]
 val loadedDerivedKey = xprv.toExtendedKey(EllipticCurveType.Ed25519)
 ```
+
+## License
+
+The SLIP10 Android code is released under the [Apache 2.0 license](./LICENSE). Binaries are licensed under the [Radix Generic EULA](https://www.radixdlt.com/terms/genericEULA).
