@@ -35,7 +35,7 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       - name: Upload SBOM
-        uses: svenstaro/upload-release-action@2b9d2847a97b04d02ad5c3df2d3a27baa97ce689 # v2.6.1
+        uses: RDXWorks-actions/upload-release-action@master
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: sbom.json
