@@ -11,9 +11,9 @@ jobs:
   snyk_scan_deps_licences:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
+      - uses: RDXWorks-actions/checkout@main
       - name: Run Snyk to check for deps vulnerabilities
-        uses: snyk/actions/gradle-jdk17@b98d498629f1c368650224d6d212bf7dfa89e4bf # v0.4.0
+        uses: RDXWorks-actions/snyk-actions/gradle-jdk17@master
         with:
           args: --all-projects --org=${{ secrets.SNYK_ORG_ID }} --severity-threshold=high
         env:
@@ -22,9 +22,9 @@ jobs:
   snyk_scan_code:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
+      - uses: RDXWorks-actions/checkout@main
       - name: Run Snyk to check for code vulnerabilities
-        uses: snyk/actions/gradle-jdk17@b98d498629f1c368650224d6d212bf7dfa89e4bf # v0.4.0
+        uses: RDXWorks-actions/snyk-actions/gradle-jdk17@master
         with:
           args: --all-projects --org=${{ secrets.SNYK_ORG_ID }} --severity-threshold=high
           command: code test
@@ -37,9 +37,9 @@ jobs:
       - snyk_scan_deps_licences
       - snyk_scan_code
     steps:
-      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
+      - uses: RDXWorks-actions/checkout@main
       - name: Generate SBOM # check SBOM can be generated but nothing is done with it
-        uses: snyk/actions/gradle-jdk17@b98d498629f1c368650224d6d212bf7dfa89e4bf # v0.4.0
+        uses: RDXWorks-actions/snyk-actions/gradle-jdk17@master
         with:
           args: --all-projects --org=${{ secrets.SNYK_ORG_ID }} --format=cyclonedx1.4+json --json-file-output sbom.json
           command: sbom
@@ -50,9 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
+      - uses: RDXWorks-actions/checkout@main
       - name: Enable Snyk online monitoring to check for vulnerabilities
-        uses: snyk/actions/gradle-jdk17@b98d498629f1c368650224d6d212bf7dfa89e4bf # v0.4.0
+        uses: RDXWorks-actions/snyk-actions/gradle-jdk17@master
         with:
           args: --all-projects --org=${{ secrets.SNYK_ORG_ID }}
           command: monitor
