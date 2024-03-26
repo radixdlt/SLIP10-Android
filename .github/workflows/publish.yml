@@ -30,7 +30,7 @@ jobs:
       - name: Generate SBOM
         uses: RDXWorks-actions/snyk-actions/gradle-jdk17@master
         with:
-          args: --all-projects --org=${{ secrets.SNYK_ORG_ID }} --format=cyclonedx1.4+json --json-file-output sbom.json
+          args: --all-projects --org=${{ secrets.SNYK_ORG_ID }} --format=cyclonedx1.4+json > sbom.json
           command: sbom
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
