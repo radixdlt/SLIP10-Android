@@ -1,0 +1,7 @@
+id: 2063d449-26df-445c-8982-c62412d1abdc
+name: SLIP10-Android
+created_at: 2024-06-03T09:07:11.280507+02:00
+group_name: Wallet
+depfiles:
+- path: ./build.gradle.kts
+  type: gradle
